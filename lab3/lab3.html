@@ -60,6 +60,7 @@ loader.load('shaders/vertexShader.vert',
 			vshader = data;
 			count += 1;
 			addCoolCube(); // we will write this method
+		        addCoolCube3();
 		},
 // onProgress callback
 	function (xhr) {
@@ -79,6 +80,7 @@ loader.load('shaders/fragmentShader.frag',
 			fshader = data;
 			count += 1;
 			addCoolCube(); // we will write this method
+		        addCoolCube3();
 		},
 // onProgress callback
 	function (xhr) {
@@ -118,6 +120,30 @@ vertexShader: vshader,
 
 
 	
+function addCoolCube3() {
+                if(count == 2) {
+
+                         let uniforms = {
+                colorB: {type: 'vec3', value: new
+THREE.Color(0x0000ff)},
+                colorA: {type: 'vec3', value: new
+THREE.Color(0xff0000)}
+         };
+
+
+
+                        geometry3 = new THREE.BoxGeometry(1, 1, 1);
+                material3 =  new THREE.ShaderMaterial({ uniforms: uniforms,
+
+                                fragmentShader: fshader,
+vertexShader: vshader,
+                                precision: "mediump"});
+
+                mesh1 = new THREE.Mesh(geometry3, material3);
+                mesh1.position.x = -2;
+                scene.add(mesh1);
+        }
+}
 
 	
 
@@ -139,7 +165,12 @@ vertexShader: vshader,
 			           geometry1.rotateX(0.01);
 			           geometry1.rotateY(0.01);
 	                	}
-                                
+
+                                  if(geometry3) {
+                                   geometry3.rotateX(0.01);
+                                   geometry3.rotateY(0.01);
+                                }
+
 
 				renderer.render(scene, camera);
 			}
