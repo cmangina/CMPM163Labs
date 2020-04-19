@@ -34,12 +34,13 @@ window.innerWidth/window.innerHeight, 0.1, 1000);
                         var geometry2 = new THREE.BoxGeometry();
 
                         
-                        var material2 = new THREE.MeshPhongMaterial( { color: 0xdddddd,
-                        specular: 0x00ff00, shininess: 30 });
+                        var material2 = new THREE.MeshPhongMaterial( { color: 0xb19cd9,
+                        specular: 0xFF1493, shininess: 50, opacity :0.5, transparent:true });
+
 
                         var cube2 = new THREE.Mesh( geometry2, material2 );
                         scene.add(cube2);
-                        geometry2.translate(2,0,0);
+                        geometry2.translate(2,2,0);
 	               // scene.add(cube2);
 			// add the light
 			var light = new THREE.PointLight(0xffffff, 1, 1000);
@@ -48,6 +49,14 @@ window.innerWidth/window.innerHeight, 0.1, 1000);
 
 			function animate() {
 				requestAnimationFrame(animate);
+				geometry2.translate(-2,-2,0);
+				geometry2.rotateY(0.01); 
+				geometry2.translate(2,2,0);
+                                //geometry2.rotateX(0.01);
+				//geometry2.rotateY(0.01);
+
+
+
 				geometry.rotateX(0.01);
 				geometry.rotateY(0.01);
 				renderer.render(scene, camera);
