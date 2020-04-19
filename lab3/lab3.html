@@ -32,7 +32,7 @@ window.innerWidth/window.innerHeight, 0.1, 1000);
      			scene.add(cube);
                         
                         var geometry2 = new THREE.BoxGeometry();
-
+               
                         
                         var material2 = new THREE.MeshPhongMaterial( { color: 0xb19cd9,
                         specular: 0xFF1493, shininess: 50, opacity :0.5, transparent:true });
@@ -91,11 +91,21 @@ loader.load('shaders/fragmentShader.frag',
 
 
 
-
 function addCoolCube() {
 		if(count == 2) {
+
+                         let uniforms = {
+		colorB: {type: 'vec3', value: new 
+THREE.Color(0xACB6E5)},
+		colorA: {type: 'vec3', value: new 
+THREE.Color(0x74ebd5)}
+	 };
+
+
+
 			geometry1 = new THREE.BoxGeometry(1, 1, 1);
-		material1 =  new THREE.ShaderMaterial({
+		material1 =  new THREE.ShaderMaterial({ uniforms: uniforms,
+
 				fragmentShader: fshader,
 vertexShader: vshader,
 				precision: "mediump"});
@@ -106,6 +116,10 @@ vertexShader: vshader,
 	}	
 }
 
+
+	
+
+	
 
 			function animate() {
 				requestAnimationFrame(animate);
@@ -120,12 +134,12 @@ vertexShader: vshader,
 				geometry.rotateX(0.01);
 				geometry.rotateY(0.01);
 
-
+                                   
  				if(geometry1) {
 			           geometry1.rotateX(0.01);
 			           geometry1.rotateY(0.01);
 	                	}
-
+                                
 
 				renderer.render(scene, camera);
 			}
