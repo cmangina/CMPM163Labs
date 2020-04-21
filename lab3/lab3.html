@@ -51,7 +51,7 @@ window.innerWidth/window.innerHeight, 0.1, 1000);
 THREE.Cache.enabled = true;
 var count = 0;
 var loader = new THREE.FileLoader();
-var fshader, vshader;
+var fshader, vshader,fshader1, vshader1;
 
 loader.load('shaders/vertexShader.vert',
 // onLoad callback
@@ -61,6 +61,7 @@ loader.load('shaders/vertexShader.vert',
 			count += 1;
 			addCoolCube(); // we will write this method
 		        addCoolCube3();
+		       
 		},
 // onProgress callback
 	function (xhr) {
@@ -91,6 +92,9 @@ loader.load('shaders/fragmentShader.frag',
 		console.error('An error happened');
 	});
 
+
+
+var geometry1, material1, mesh1;
 
 
 function addCoolCube() {
@@ -133,7 +137,8 @@ THREE.Color(0xff0000)}
 
 
                         geometry3 = new THREE.BoxGeometry(1, 1, 1);
-                material3 =  new THREE.ShaderMaterial({ uniforms: uniforms,
+                material3 =  new THREE.ShaderMaterial({ 
+			       uniforms: uniforms,
 
                                 fragmentShader: fshader,
 vertexShader: vshader,
@@ -145,7 +150,94 @@ vertexShader: vshader,
         }
 }
 
-	
+//adding anothe vertex shader
+loader.load('shaders/vertexShader1.vert',
+// onLoad callback
+	function (data) {
+			console.log(data); // output the text to the console
+			vshader1 = data;
+			count += 1;
+			addCoolCube4(); // we will write this method
+		},
+// onProgress callback
+	function (xhr) {
+		console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+	},
+// onError callback
+	function (err) {
+		console.error('An error happened');
+	});
+
+
+
+
+// adding another loader for the new fragshader
+
+loader.load('shaders/fragmentShader1.frag',
+// onLoad callback
+        function (data) {
+                        console.log(data); // output the text to the console
+                        fshader1 = data;
+                        count += 1;
+                        addCoolCube4(); // we will write this method
+                },
+// onProgress callback
+        function (xhr) {
+                console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+        },
+// onError callback
+        function (err) {
+                console.error('An error happened');
+        });
+
+
+function addCoolCube4() {
+		if(count == 4) { 
+
+
+			
+
+                         let uniforms = {
+                colorB: {type: 'vec3', value: new
+THREE.Color(0xFFDF00)},
+                colorA: {type: 'vec3', value: new
+THREE.Color(0xff0000)}
+         };
+
+
+			geometry4 = new THREE.BoxGeometry(1, 1, 1);
+		material4 =  new THREE.ShaderMaterial({
+			uniforms: uniforms,
+				fragmentShader: fshader1,
+vertexShader: vshader1,
+				precision: "mediump"});
+
+		mesh1 = new THREE.Mesh(geometry4, material4);
+		mesh1.position.y = 2;
+		scene.add(mesh1);
+	}	
+}
+
+
+
+/*
+
+function addCoolCube4() {
+		if(count == 3) {
+			geometry4 = new THREE.BoxGeometry(1, 1, 1);
+		material4 =  new THREE.ShaderMaterial({
+				fragmentShader: fshader1,
+vertexShader: vshader,
+				precision: "mediump"});
+
+		mesh1 = new THREE.Mesh(geometry4, material4);
+		mesh1.position.y = 2;
+		scene.add(mesh1);
+	}	
+}
+
+*/
+
 
 			function animate() {
 				requestAnimationFrame(animate);
@@ -170,6 +262,11 @@ vertexShader: vshader,
                                    geometry3.rotateX(0.01);
                                    geometry3.rotateY(0.01);
                                 }
+                                if(geometry4) {
+			geometry4.rotateX(0.01);
+			geometry4.rotateY(0.01);
+		}
+
 
 
 				renderer.render(scene, camera);
