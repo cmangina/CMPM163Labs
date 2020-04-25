@@ -22,16 +22,41 @@ window.innerWidth/window.innerHeight, 0.1, 1000);
 			
 			// setup the cube
 var geometry = new THREE.BoxGeometry();
-      			var material = new THREE.MeshPhongMaterial( { color: 0x00ff00 } );
-      			var cube = new THREE.Mesh(geometry, material);
+                        var texture = THREE.ImageUtils.loadTexture("154.JPG");
+                        var normMap = THREE.ImageUtils.loadTexture("154_norm.jpg");
+      			//var material = new THREE.MeshPhongMaterial( { color: 0x00ff00 } );
+//var material = new THREE.MeshPhongMaterial( { map: texture } );
+  var material = new THREE.MeshPhongMaterial({map: texture, normalMap: normMap});
+    			
+
+var cube = new THREE.Mesh(geometry, material);
      			scene.add(cube);
+
+
+                        // add second cube 
+material = new THREE.MeshPhongMaterial( { map: texture });
+
+var cube2 = new THREE.Mesh(geometry, material);
+scene.add(cube2);
+cube2.position.x -= 2;
+
+
 
 			// add the light
 			var light = new THREE.PointLight(0xffffff, 1, 1000);
 			light.position.set(10, 10, 10);
 			scene.add(light);
-
+var delta = -0.5;
 			function animate() {
+                        if (light.position.x < -20.0){
+				delta = 0.5;
+			}
+                        else if (light.position.x >20.0){
+
+			delta =-0.5;
+		        }
+		        light.position.x+=delta;
+
 				requestAnimationFrame(animate);
 				renderer.render(scene, camera);
 			}
