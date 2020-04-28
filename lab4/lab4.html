@@ -13,14 +13,12 @@
 <script id="vertexShader" type="x-shader/x-vertex">
 // code for vertex shader
 varying vec2 vUv;
+//varying vec2 test;
 void main() {
-  vUv = 3.0*uv;
-//float x=vUv.x;
- //loat y = vUv.y;
- 
-  //float test= uv mod 1;
-//  mod2= vUv mod 1.0;
- // vec2 mod(uv, 1.0); 
+//  vUv = 2.0*uv;
+vUv= uv;
+ // test = mod(vUv, 1.0);
+ //vUv =test;
   vec4 modelViewPosition = modelViewMatrix * vec4(position, 1.0);
   gl_Position = projectionMatrix * modelViewPosition;
 }
@@ -30,10 +28,18 @@ void main() {
 // code for fragment shader
 uniform sampler2D texture1;
 varying vec2 vUv;
-//x=vuv.x;
- //vUv= 0.5* vUv;
+//varying vec2 test;
+//  vUv = 2.0*uv;
+
+ // test = mod(vUv, 1.0);
+
 void main() {
-    gl_FragColor = texture2D(texture1, vUv);
+
+ //vUv = 2.0*uv;
+
+ vec2 test = mod(vUv*3.0, 1.0);
+
+    gl_FragColor = texture2D(texture1, test);
 }
 </script>
 
