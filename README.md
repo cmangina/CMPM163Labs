@@ -17,12 +17,13 @@ LAB 4 README:
 3) The color sampled from texture from uv coordinate of (0.375. 0.25) would be (3,2) in x,y coordinate which is white.
 
 A total of 5 cubes were made:
-The top cube was made with a texture and I attempted tiling but couldn't figure it out. I was able to scale down the texture but wasn't sure how to get it to repeat itself. First cube on the bottom was made with three,js functionality using a brick texture. Next cube after that uses three.js to make brick cube with normal map.  The third cube mixes I mixed the pairs given in file to see what the texture would result with a different normal map. Last,cube makes a texture with shaders.
+The top cube was made with a texture which we needed to tile. I was able to scale down the texture but wasn't sure how to get it to repeat itself. Edit: I was able to get the tile to tile 3 by 3 on each face by scaling the uv by three and using mod function so that the tex value would always be between 0 and 1 and allow the tile to pick colors from texture in desired places. First cube on the bottom was made with three,js functionality using a brick texture. Next cube after that uses three.js to make brick cube with normal map.  The third cube mixes I mixed the pairs given in file to see what the texture would result with a different normal map. Last,cube makes a texture with shaders.
 Part 1 Texture A (uses three.js built in texture functionality)
 Part 1 Texture A & Normal Map A (uses three.js built in texture functionality)
 Part 1 Texture B & Normal Map B (new texture/normal map combo using built in three.js functionality)
 Part 2 Texture C (load this texture with shaders, as we worked through in the lab together)
 Part 2 Texture D (tile this texture at least by showing a 2x2 grid) 
-https://drive.google.com/file/d/1kAobf1Gp29cGIfMij3gekrBAxpgCEVSD/view?usp=sharing
+
+Lab4 videolink :https://drive.google.com/file/d/12h_6i8xceIQRlcB21m9LiDvrX4VoCLM0/view?usp=sharing (updated link)
 
 
