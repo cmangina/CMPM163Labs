@@ -15,6 +15,7 @@ LAB 4 README:
 1) To get x value when given u value of uv coordinate, I realized you are essentially mutliplying the width of x of your texture map( which in this cas will be 8X8) and take that width and multiply with u value to get our x coordinate. So, our formula would be: u * width_of_x =x.
 2) With same reasoning as 1, y will be focusing on height, and the formula will be y = height_of_y*v .
 3) The color sampled from texture from uv coordinate of (0.375. 0.25) would be (3,2) in x,y coordinate which is white.
+
 A total of 5 cubes were made:
 The top cube was made with a texture and I attempted tiling but couldn't figure it out. I was able to scale down the texture but wasn't sure how to get it to repeat itself. First cube on the bottom was made with three,js functionality using a brick texture. Next cube after that uses three.js to make brick cube with normal map.  The third cube mixes I mixed the pairs given in file to see what the texture would result with a different normal map. Last,cube makes a texture with shaders.
 Part 1 Texture A (uses three.js built in texture functionality)
