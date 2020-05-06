@@ -26,4 +26,9 @@ Part 2 Texture D (tile this texture at least by showing a 2x2 grid)
 
 Lab4 videolink :https://drive.google.com/file/d/12h_6i8xceIQRlcB21m9LiDvrX4VoCLM0/view?usp=sharing (updated link)
 
+Lab 5 README:
+Lab5a video: https://drive.google.com/file/d/1s_p2ZYMvPvfKFAMlB9Li5nHFzGy3xzzs/view?usp=sharing
+Lab5b video: https://drive.google.com/file/d/1t--6aAMwC1Ba-D22HDJ3qk6jXPJkfWhX/view?usp=sharing
+Lab5c video: https://drive.google.com/file/d/13iSR-Othi9_QsRNO35oOxuxbWh1pXzfj/view?usp=sharing
 
+In Lab5c, I tried to make a spiral but I couldn't get the shape. I tried to incorporate a spiral formula (as found on Stack Oerflow) to try to make a spiral galaxy using spiral equations, but it formed a more cicular blob of points.  I played aroun with points to create it to rotate spread out and rotate around a sphere object which will be our sun.
