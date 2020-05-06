@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Lab 5b: Choose Your Own Particle Adventure</title>
+		<style>
+			body { margin: 0; }
+			canvas { display: block; }
+		</style>
+	</head>
+	<body>
+		<script src="../three.js-master/build/three.js"></script>
+		<script>
+			// setup the scene
+var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera(75,
+window.innerWidth/window.innerHeight, 0.1, 1000);
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			document.body.appendChild(renderer.domElement);
+			camera.position.z = 60;
+/*
+particles = []
+const geo = new THREE.Geometry()
+for(let i=0; i<1000; i++) {
+
+const particle = {
+     
+        var x = THREE.Math.randFloatSpread( 360 );
+	var y = THREE.Math.randFloatSpread( 360 );
+	var z = THREE.Math.randFloatSpread( 360 );
+}
+particles.push(particle);
+geo.vertices.push(particle)
+
+
+    }
+
+
+const mat = new THREE.PointsMaterial({color:0xffffff,size: 0.5});
+mesh = new THREE.Points(geo,mat);
+mesh.position.z = -4;
+scene.add(mesh)
+*/
+	const geometry = new THREE.Geometry()
+
+	var vertices = [];
+
+for ( var i = 0; i < 10000; i ++ ) {
+//       const a = 15;
+//var r = sqrt(random())* 200;
+ //var x = a * r * cos(r) + (2 * a * random() - a);
+//var y = a * r * sin(r) + (2 * a * random() - a);
+     
+	var theta = THREE.MathUtils.randFloatSpread( 360 );
+	var phi= THREE.MathUtils.randFloatSpread( 360 );
+	const distance = THREE.MathUtils.randFloatSpread( 360 );
+ geometry.vertices.push(new THREE.Vector3(
+         distance * Math.cos(i),
+         distance * Math.sin(i),
+         distance*Math.random() //* Math.cos(theta) / 10
+  ))
+/*	
+	geometry.vertices.push(new THREE.Vector3(
+  	 distance * Math.sin(theta) * Math.cos(phi),
+     distance * Math.sin(theta) * Math.sin(phi),
+      //distance *Math.sin(phi)//* Math.cos(theta) / 10
+  ))
+*/
+
+
+
+}
+
+
+//var material = new THREE.PointsMaterial( { color: 0x888888 } );
+var sprite = new THREE.TextureLoader().load('disc.png');
+var material = new THREE.PointsMaterial( { map: sprite, 
+alphaTest: 0.5, transparent: true } );
+
+var points = new THREE.Points( geometry, material );
+
+scene.add( points );
+var geometry1 = new THREE.SphereGeometry( 10, 50, 50 );
+var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+var sphere = new THREE.Mesh( geometry1, material );
+scene.add( sphere );
+
+var geometry2 = new THREE.SphereGeometry( 3, 50, 50 );
+var material2 = new THREE.MeshBasicMaterial( {color: 0xadd8e6} );
+var sphere2 = new THREE.Mesh( geometry2, material2 );
+//geometry2.positionX=2;
+scene.add( sphere2);
+sphere2.position.x = 40;
+geometry2.scale(1.0,1.0,1.0);
+
+function animate() {
+/*
+*	particles.forEach(p => {
+p.velocity.add(p.acceleration);
+p.position.add(p.velocity);
+});
+mesh.geometry.verticesNeedUpdate = true;
+*/
+      	points.rotation.x += 0.01;
+    points.rotation.y += 0.01;
+     geometry1.rotateX(0.1);
+     geometry2.rotateX(0.1);
+     geometry2.rotateY(0.1);
+	requestAnimationFrame(animate);
+	renderer.render(scene, camera);
+}
+
+animate();
+		</script>
+	</body>
+</html>
