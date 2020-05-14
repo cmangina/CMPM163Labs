@@ -35,3 +35,9 @@ Lab5b video: https://drive.google.com/file/d/1t--6aAMwC1Ba-D22HDJ3qk6jXPJkfWhX/v
 Lab5c video: https://drive.google.com/file/d/13iSR-Othi9_QsRNO35oOxuxbWh1pXzfj/view?usp=sharing
 
 In Lab5c, I tried to make a spiral but I couldn't get the shape. I tried to incorporate a spiral formula (as found on Stack Oerflow) to try to make a spiral galaxy using spiral equations, but it formed a more cicular blob of points.  I played around with points to create it to rotate spread out and rotate around a sphere object which will be our sun. I also added another sphere object to add as another planet since there was no free model for earth.
+
+Lab 6 README:
+Screenshot of Texture with corrected Aspect Ratio:
+<img src = "images/lab2_picture.PNG">
+
+
