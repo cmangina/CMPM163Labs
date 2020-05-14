@@ -38,6 +38,16 @@ In Lab5c, I tried to make a spiral but I couldn't get the shape. I tried to inco
 
 Lab 6 README:
 Screenshot of Texture with corrected Aspect Ratio:
-<img src = "images/lab2_picture.PNG">
+<img src = "images/lab6.PNG">
+
+Link to shadertoy project w/circle and texture:
+link: https://www.shadertoy.com/view/tdSfzh
+
+Link to cool shadertoy proj:
+https://www.shadertoy.com/view/MlS3Rh
+
+
+
+
 
 
