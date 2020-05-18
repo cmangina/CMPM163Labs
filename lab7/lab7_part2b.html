@@ -60,6 +60,7 @@ vNormal = normalMatrix * objectNormal;
 
 
 			function animate(time) {
+				if(matShader) matShader.uniforms.time.value = time/1000; // animate waves
 				requestAnimationFrame(animate);
 				renderer.render(scene, camera);
 			}
