@@ -47,6 +47,31 @@ Link to cool shadertoy proj:
 https://www.shadertoy.com/view/MlS3Rh
 
 
+Lab 7 README:
+
+A screenshot of terrain with the height map as the texture:
+<img src = "images/smoke_height.PNG">
+
+A screenshot of terrain with a different texture as the texture:
+<img src = "images/smoke_color.PNG">
+
+Link to video of wavy blue plane: https://drive.google.com/file/d/1MOkBNXnR6qTiP0AMPkyJLX6XIJrad-xv/view?usp=sharing
+
+A screenshot mountain + water scene:
+<img src = "images/nature.PNG">
+<img src = "images/nature_closeup.PNG">
+
+Partner Process of their lab and answer to Questions on Lab:
+i. part 1
+ii. the most challenging part was understanding the layout/format for the vertex shaders
+iii. the most interesting part was seeing how objects could be made into different shapes using only the shader
+
+
+
+
+
+
+
 
 
 
