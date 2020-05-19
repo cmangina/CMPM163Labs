@@ -63,7 +63,9 @@ A screenshot mountain + water scene:
 
 Partner Process of their lab and answer to Questions on Lab:
 i. part 1
+
 ii. the most challenging part was understanding the layout/format for the vertex shaders
+
 iii. the most interesting part was seeing how objects could be made into different shapes using only the shader
 
 
