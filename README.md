@@ -62,6 +62,7 @@ A screenshot mountain + water scene:
 <img src = "images/nature_closeup.PNG">
 
 Partner Process of their lab and answer to Questions on Lab:
+
 i. part 1
 
 ii. the most challenging part was understanding the layout/format for the vertex shaders
