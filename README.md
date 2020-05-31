@@ -69,6 +69,8 @@ ii. the most challenging part was understanding the layout/format for the vertex
 
 iii. the most interesting part was seeing how objects could be made into different shapes using only the shader
 
+iv. we didn't help each other since we did differetn parts of assignment 
+
 
 
 
