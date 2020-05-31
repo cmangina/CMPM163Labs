@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html>
-	<head
+	<head>
 		<meta charset="utf-8">
 	<title>Lab 8: Procedural Generation</title>
 		<style>
@@ -19,7 +19,7 @@
                          void main() {
                                 vUv = uv;
                                 vec4 heightColor = texture2D(heightMap1, uv);
-        vec3 newPosition = position + normal * 1.0 * heightColor.r;
+        vec3 newPosition = position + normal * 40.0 * heightColor.r;
         vec4 modelViewPosition = modelViewMatrix * vec4(newPosition, 1.0);
 
                                 gl_Position = projectionMatrix * modelViewPosition;
@@ -126,7 +126,7 @@ for(var r = -planeSize/2; r < planeSize/2; r++) {
                         var geometry = new THREE.BoxGeometry();
                         var material = new THREE.MeshPhongMaterial({color:0x00ff00});
                         var cube = new THREE.Mesh(geometry, material);
-                        cube.scale.y = Math.random() *(noiseData[i]/255 * 15);
+                        cube.scale.y = Math.random() *(noiseData[i]/255 * 8);
                         cube.scale.x = .5;
                         cube.scale.z = .5;
 
@@ -194,11 +194,12 @@ var uniforms = {
 var material = new THREE.ShaderMaterial({ uniforms: uniforms,
 vertexShader: document.getElementById('vertexShader').textContent, fragmentShader: document.getElementById('fragmentShader').textContent});
 
-var plane = new THREE.Mesh(new THREE.PlaneGeometry(10, 10, 200,
+var plane = new THREE.Mesh(new THREE.PlaneGeometry(50, 50, 200,
 200), material);
-        plane.position.z = -8;
-        plane.position.y = 3;
+        plane.position.z = 20;
+        plane.position.y = planeCenter.y-10;
         plane.rotation.x = -Math.PI / 2;
+        
         scene.add(plane);
 	
 
