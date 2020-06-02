@@ -71,6 +71,28 @@ iii. the most interesting part was seeing how objects could be made into differe
 
 iv. we didn't help each other since we did differetn parts of assignment 
 
+Lab 8 README:
+
+i.An image of a virtual/real city that inspired your generated city:
+<img src = "images/citiRef.PNG">
+
+ii.A screenshot or video of your generated city:
+<img src = "images/lab8_picture.PNG">
+
+iii. An explanation of how the inspiration city affected your generated city’s design:
+
+I wanted to create a city with a mountain in the background and a body of ocean in front with water surrounding it.
+These factors were my focus for my procedural city which I wanted to include in the city.
+
+iV. The lab 8 folder with the three.js code - included or progress was pulled into git
+
+v. Did not get in touch with partner unfortunately 
+
+vi. no help from other( reason from v)
+
+
+
+
 
 
 
