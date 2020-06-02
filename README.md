@@ -74,10 +74,11 @@ iv. we didn't help each other since we did differetn parts of assignment
 Lab 8 README:
 
 i.An image of a virtual/real city that inspired your generated city:
-<img src = "images/citiRef.JPG">
+<img src = "images/citiRef.PNG">
 
 ii.A screenshot or video of your generated city:
 <img src = "images/lab8_picture.PNG">
+<img src = "images/lab8_pic2.PNG">
 
 iii. An explanation of how the inspiration city affected your generated city’s design:
 
