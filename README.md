@@ -110,9 +110,13 @@ Screenshot(s) of your own L-System:
 
 
 A description of how you made your own  (what formula did you use and why):
+
 I wanted pick a pattern that I could clearly see the L system at work, so I used a simple formula and tried to incorporate it in the code we designed from tutorial.
+
 The Formula used:
+
 a: F
+
 b: F[-F]F[+F]F
 
 The lab 9 folder with the three.js code: included in lab 9
