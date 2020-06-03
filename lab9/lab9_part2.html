@@ -20,16 +20,7 @@
 			renderer.setSize(window.innerWidth, window.innerHeight);
 			document.body.appendChild(renderer.domElement);
 
-/*			// example of how to add a line
-			var material = new THREE.LineBasicMaterial({color:0xffffff});
-			var points = [];
-			points.push(new THREE.Vector3(0,0,0));
-			points.push(new THREE.Vector3(0,10,0));
-			var geometry = new THREE.BufferGeometry().setFromPoints(points);
-			var line = new THREE.Line(geometry, material);
 
-scene.add(line);
-*/
 
 var axiom = 'F'; // starting sequence
 	var sequence = axiom; 
@@ -90,8 +81,8 @@ var angleToSave = currentAngle;
 		
 		} else if (current == "]") {
 			var popped = savedTransformations.pop();
-	currentAngle = popped.angle;
-	points.push(popped.point);
+	                currentAngle = popped.angle;
+	                points.push(popped.point);
 
 			
 		}
@@ -101,7 +92,41 @@ var angleToSave = currentAngle;
 
 }
 
+function generateSequence(){
+lineLength *=0.5; // each time called we take half of Line Length
 
+var nextSeq = ' ';
+for( var i = 0; i< sequence.length;i++){
+	var curr = sequence.charAt(i); //current position
+	var found = false;
+
+	//for each rule
+	for( var j=0; j<rules.length;j++){
+
+            if( curr == rules[j].a){
+               found  == true;
+	       nextSeq += rules[j].b; //adding result of rule to nextSeq
+	       break;
+	    }
+
+	}
+
+        if(!found){
+		nextSeq+=curr; // if no rule add to nextSeq
+	}
+}
+
+//change Sequence with new sequence 
+sequence = nextSeq;
+drawSequence(sequence);
+
+
+}
+
+drawSequence(sequence); // call draw sequence of ‘F’
+
+// whenever you click, generate another sequence
+document.addEventListener("click", generateSequence);
 
 
 			function animate(time) {
