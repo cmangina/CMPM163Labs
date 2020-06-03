@@ -92,6 +92,33 @@ v. Did not get in touch with partner unfortunately
 vi. no help from other( reason from v)
 
 
+LAB 9 README:
+Screenshots of multiple stages of the L-System made in the tutorial portion of part 2:
+<img src = "images/lab9.1.PNG">
+<img src = "images/lab9.2.PNG">
+<img src = "images/lab9.3.PNG">
+<img src = "images/lab9.4.PNG">
+<img src = "images/lab9.5.PNG">
+
+
+Screenshot(s) of your own L-System:
+<img src = "images/lab9b.1.PNG">
+<img src = "images/lab9b.2.PNG">
+<img src = "images/lab9b.3.PNG">
+<img src = "images/lab9b.4.PNG">
+<img src = "images/lab9b.5.PNG">
+
+
+A description of how you made your own  (what formula did you use and why):
+I wanted pick a pattern that I could clearly see the L system at work, so I used a simple formula and tried to incorporate it in the code we designed from tutorial.
+The Formula used:
+a: F
+b: F[-F]F[+F]F
+
+The lab 9 folder with the three.js code: included in lab 9
+
+
+
 
 
 
